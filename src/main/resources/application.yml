@@ -4,7 +4,7 @@ spring:
 
   datasource:
     url: jdbc:mysql://localhost:3306/amperly_db
-    username: ${DB_USERNAME:root}
+    username: ${DB_USERNAME:}
     password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
@@ -22,11 +22,10 @@ server:
 
 app:
   jwt:
-    # Agar env var JWT_SECRET set hai to woh use hoga,
-    # warna yeh default secret lagega (sirf dev ke liye)
-    secret: ${JWT_SECRET:koi-bhi-strong-dev-secret-yahan-likho-32-characters-se-bada}
+    
+    secret: ${JWT_SECRET}
     # Milliseconds – yaha default 1 ghanta (3600000 ms)
-    expiration: ${JWT_EXPIRATION:3600000}
+    expiration: ${JWT_EXPIRATION}
 
 nasa:
   api:
@@ -34,5 +33,5 @@ nasa:
 
 gemini:
   api:
-    key: ${GEMINI_API_KEY:dummy-dev-key}
+    key: ${GEMINI_API_KEY:}
     url: https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent
