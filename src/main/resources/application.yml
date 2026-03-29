@@ -24,7 +24,6 @@ app:
   jwt:
     
     secret: ${JWT_SECRET}
-    # Milliseconds – yaha default 1 ghanta (3600000 ms)
     expiration: ${JWT_EXPIRATION}
 
 nasa:
